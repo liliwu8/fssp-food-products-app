@@ -1,6 +1,6 @@
 \c foods; 
 
-INSERT INTO food (original name,  name, price, continent, city, country, image, ingredients) VALUES
+INSERT INTO food (originalname,  name, price, continent, city, country, image, ingredients) VALUES
 ('Buger', 'Burger', 70, 'North America', 'NYC', 'USA','https://cdn.tasteatlas.com/images/dishrestaurants/7b0a42890ec64f70a6e985779f756b3a.jpg?mw=1300', 'Beef, burger bun, onion, ketchup, tomato, lettuce' ),
 ('Al Pastor Taco', 'Shepherd Style Tacos', 200, 'North America', 'Tijuana', 'Mexico','https://www.mcall.com/resizer/TVeUO901MwT-vf6nK_2r88Ilbiw=/800x0/filters:format(jpg):quality(70)/arc-anglerfish-arc2-prod-tronc.s3.amazonaws.com/public/O55MYNSSY5G2HKOMWK46CI57LA.jpg', 'pork adobada meat grilled from a spit, served on a corn tortilla with onion, cilantro, salsa, and pineapple slices'),
 ('Ceviche', 'Ceviche', 500, 'South America', 'Lima', 'Peru', 'https://migrationology.com/wp-content/uploads/2019/07/P1855178.jpeg', 'fish, octopus, lime juice, salt, pepper'),
