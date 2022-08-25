@@ -1,42 +1,43 @@
 const db = require('../db/dbConfig.js')
 
 //Index
-const getAllSnacks = async () => {
+const getAllFoods = async () => {
   try {
-    const allSnacks = await db.any('SELECT * FROM snacks')
-    return allSnacks
+    const allfoods = await db.any('SELECT * FROM food')
+    return allfoods
   } catch (error) {
     return error
   }
 }
 
 //Individual
-const getSnack = async (id) => {
+const getFood = async (id) => {
   try {
-    const snack = await db.any('SELECT * FROM snacks WHERE id=$1', id)
-    return snack
+    const food = await db.any('SELECT * FROM food WHERE id=$1', id)
+    return food
   } catch (error) {
     return error
   }
 }
 
 //Create
-const createSnack = async (snack) => {
-  const { name, fiber, protein, added_sugar, image } = snack
+const createFood = async (food) => {
+  const {
+    orginalname,
+    name,
+    price,
+    continent,
+    city,
+    country,
+    image,
+    description,
+  } = food
   try {
-    const newSnack = await db.one(
-      'insert into snacks (name, fiber, protein, added_sugar, is_healthy, image) values ($1, $2, $3, $4, $5, $6) returning *',
-      [
-        getFormattedName(name),
-        fiber,
-        protein,
-        added_sugar,
-        isHealthy(fiber, protein, added_sugar),
-        isValidUrl(image) ||
-          'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image',
-      ]
+    const newfood = await db.one(
+      'insert into food (orginalname, name, price, continent, city, country, image, description) values ($1, $2, $3, $4, $5, $6, $7, $8) returning *',
+      [orginalname, name, price, continent, city, country, image, description]
     )
-    return newSnack
+    return newfood
   } catch (error) {
     console.log(error.message || error)
     return error
@@ -44,22 +45,23 @@ const createSnack = async (snack) => {
 }
 
 //Update
-const updateSnack = async (id, snack) => {
+const updateFood = async (id, snack) => {
   try {
-    const updateASnack = await db.one(
-      'update snacks set name= $1, fiber=$2, protein=$3, added_sugar=$4, is_healthy = $5, image =$6 where id = $7 returning * ',
+    const updatesFood = await db.one(
+      'update food set orginalname=$1, name=$2, price=$3, continent=$4, city=$5, country=$6, image=$7, description=$8 where id = $9 returning * ',
       [
-        getFormattedName(snack.name),
-        snack.fiber,
-        snack.protein,
-        snack.added_sugar,
-        isHealthy(snack.fiber, snack.protein, snack.added_sugar),
-        isValidUrl(snack.image) ||
-          'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image',
+        orginalname,
+        name,
+        price,
+        continent,
+        city,
+        country,
+        image,
+        description,
         id,
       ]
     )
-    return updateASnack
+    return updatesFood
   } catch (error) {
     console.log(error.message || error)
     return error
@@ -67,13 +69,13 @@ const updateSnack = async (id, snack) => {
 }
 
 //Delete
-const deleteSnack = async (id) => {
+const deleteFood = async (id) => {
   try {
-    const oneSnack = await db.one(
-      'DELETE FROM snacks WHERE id=$1 RETURNING *',
+    const oneFood = await db.one(
+      'DELETE FROM food WHERE id=$1 RETURNING *',
       id
     )
-    return oneSnack
+    return oneFood
   } catch (error) {
     console.log(error.message || error)
     return error
@@ -81,9 +83,9 @@ const deleteSnack = async (id) => {
 }
 
 module.exports = {
-  getAllSnacks,
-  getSnack,
-  deleteSnack,
-  updateSnack,
-  createSnack,
+  getAllFoods,
+  getFood,
+  deleteFood,
+  updateFood,
+  createFood,
 }
