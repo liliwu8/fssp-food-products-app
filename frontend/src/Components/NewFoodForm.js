@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-const API = process.env.PORT
+const API = process.env.REACT_APP_API_URL
 
 function NewFoodForm() {
   const navigate = useNavigate()
@@ -19,21 +19,22 @@ function NewFoodForm() {
   const handleTextChange = (event) => {
     setFood({ ...food, [event.target.id]: event.target.value })
   }
-
+ const handleNumChange = (event) => {
+   setFood({ ...food, [event.target.id]: Number(event.target.value )})
+ }
   const handleSubmit = (event) => {
     event.preventDefault()
     axios
       .post(`${API}/food`, food)
-        .then((res) => {
-            setFood(res.data)
-           
+      .then((res) => {
+        setFood(res.data)
         navigate('/foods')
       })
       .catch((err) => {
         console.warn(err)
       })
   }
-    
+console.log(food)
   return (
     <div className='New'>
       <form onSubmit={handleSubmit}>
@@ -42,7 +43,7 @@ function NewFoodForm() {
         <input
           id='originalname'
           name='originalname'
-          value={food.payload.originalname}
+          value={food.originalname}
           type='text'
           onChange={handleTextChange}
           placeholder='Orginal Name'
@@ -55,7 +56,7 @@ function NewFoodForm() {
         <input
           id='name'
           name='name'
-          value={food.payload.name}
+          value={food.name}
           type='text'
           placeholder='name'
           onChange={handleTextChange}
@@ -68,10 +69,10 @@ function NewFoodForm() {
         <input
           id='price'
           name='price'
-          value={food.payload.price}
+          value={food.price}
           type='number'
           placeholder='amount'
-          onChange={handleTextChange}
+          onChange={handleNumChange}
           required
         />
         <br />
@@ -81,7 +82,7 @@ function NewFoodForm() {
         <input
           id='continent'
           name='continent'
-          value={food.payload.continent}
+          value={food.continent}
           onChange={handleTextChange}
           type='text'
           placeholder='continent'
@@ -94,7 +95,7 @@ function NewFoodForm() {
         <input
           id='city'
           name='city'
-          value={food.payload.city}
+          value={food.city}
           onChange={handleTextChange}
           type='text'
           placeholder='city'
@@ -102,10 +103,12 @@ function NewFoodForm() {
         />
         <br />
         <br />
+        <label htmlFor='country'>Country</label>
+        <br />
         <input
           id='country'
           name='country'
-          value={food.payload.country}
+          value={food.country}
           onChange={handleTextChange}
           type='text'
           placeholder='country'
@@ -113,16 +116,20 @@ function NewFoodForm() {
         />
         <br />
         <br />
+        <label htmlFor='ingredients'>Ingredients</label>
+        <br />
         <input
           id='ingredients'
           name='ingredients'
-          value={food.payload.ingredients}
+          value={food.ingredients}
           onChange={handleTextChange}
           type='text'
           placeholder='ingredients'
           required
         />
-        <input type='submit' value='CREATE NEW ITEM' className='button' />
+        <br />
+        <br />
+        <input type='submit' value='CREATE NEW FOOD' className='button' />
       </form>
     </div>
   )

@@ -23,19 +23,19 @@ const getFood = async (id) => {
 //Create
 const createFood = async (food) => {
   const {
-    orginalname,
+    originalname,
     name,
     price,
     continent,
     city,
     country,
     image,
-    description,
+    ingredients
   } = food
   try {
     const newfood = await db.one(
-      'insert into food (orginalname, name, price, continent, city, country, image, description) values ($1, $2, $3, $4, $5, $6, $7, $8) returning *',
-      [orginalname, name, price, continent, city, country, image, description]
+      'insert into food (originalname, name, price, continent, city, country, image, ingredients) values ($1, $2, $3, $4, $5, $6, $7, $8) returning *',
+      [originalname, name, price, continent, city, country, image, ingredients]
     )
     return newfood
   } catch (error) {
@@ -45,19 +45,29 @@ const createFood = async (food) => {
 }
 
 //Update
-const updateFood = async (id, snack) => {
+const updateFood = async (id, food) => {
+  const {
+    originalname,
+    name,
+    price,
+    continent,
+    city,
+    country,
+    image,
+    ingredients,
+  } = food
   try {
     const updatesFood = await db.one(
-      'update food set orginalname=$1, name=$2, price=$3, continent=$4, city=$5, country=$6, image=$7, description=$8 where id = $9 returning * ',
+      'update food set originalname=$1, name=$2, price=$3, continent=$4, city=$5, country=$6, image=$7, ingredients=$8 where id = $9 returning * ',
       [
-        orginalname,
+        originalname,
         name,
         price,
         continent,
         city,
         country,
         image,
-        description,
+        ingredients,
         id,
       ]
     )

@@ -41,7 +41,7 @@ foods.put('/:id', async (req, res) => {
    const updatedAFood = await updateFood(id, req.body)
 
    if (updatedAFood.id) {
-     res.status(200).json({ payload: updatedASnack })
+     res.status(200).json({ payload: updatedAFood })
    } else {
      res.status(404).json('snack not found')
    }

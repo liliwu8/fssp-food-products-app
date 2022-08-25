@@ -4,11 +4,11 @@ CREATE DATABASE foods;
 
 CREATE TABLE food (
     id SERIAL PRIMARY KEY,
-    orginalname TEXT, 
+    originalname TEXT, 
     name TEXT, 
     price INT, 
     continent TEXT, 
     city text, 
     country text,
     image TEXT,
-    description text);
+    ingredients text);
