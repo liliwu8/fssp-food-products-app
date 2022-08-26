@@ -1,4 +1,5 @@
 const db = require('../db/dbConfig.js')
+const { isValidUrl } = require('../Vaildation/foodValidation')
 
 //Index
 const getAllFoods = async () => {
@@ -30,12 +31,22 @@ const createFood = async (food) => {
     city,
     country,
     image,
-    ingredients
+    ingredients,
   } = food
   try {
     const newfood = await db.one(
       'insert into food (originalname, name, price, continent, city, country, image, ingredients) values ($1, $2, $3, $4, $5, $6, $7, $8) returning *',
-      [originalname, name, price, continent, city, country, image, ingredients]
+      [
+        originalname,
+        name,
+        price,
+        continent,
+        city,
+        country,
+        ingredients,
+        isValidUrl(image) ||
+          'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image',
+      ]
     )
     return newfood
   } catch (error) {
@@ -53,8 +64,8 @@ const updateFood = async (id, food) => {
     continent,
     city,
     country,
-    image,
     ingredients,
+    image,
   } = food
   try {
     const updatesFood = await db.one(
@@ -66,7 +77,9 @@ const updateFood = async (id, food) => {
         continent,
         city,
         country,
-        image,
+        isValidUrl(image) ||
+          'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image',
+        ,
         ingredients,
         id,
       ]
@@ -81,10 +94,7 @@ const updateFood = async (id, food) => {
 //Delete
 const deleteFood = async (id) => {
   try {
-    const oneFood = await db.one(
-      'DELETE FROM food WHERE id=$1 RETURNING *',
-      id
-    )
+    const oneFood = await db.one('DELETE FROM food WHERE id=$1 RETURNING *', id)
     return oneFood
   } catch (error) {
     console.log(error.message || error)

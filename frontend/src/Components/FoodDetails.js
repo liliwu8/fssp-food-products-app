@@ -33,7 +33,7 @@ function FoodDetails() {
 
   return (
     <article>
-      <img src={food.image} alt='dishpic' width='200px' height='120px' />
+      <img src={food.image} alt='dishpic' width='300px' height='200px' />
       <p>Original Name: {food.originalname}</p>
       <p>Name: {food.name}</p>
       <p>Price ${food.price}</p>

@@ -3,7 +3,7 @@ import NewFoodForm from '../Components/NewFoodForm'
 function New() {
   return (
     <div className='New'>
-      <h2>Add a new Song</h2>
+      <h2>Add a new Dish</h2>
       <NewFoodForm />
     </div>
   )

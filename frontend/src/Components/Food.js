@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom'
 
-function Food({ image, id, name, country, city,index }) {
+function Food({ image, id, name, country, city, index }) {
   console.log(image)
   return (
     <div>
       <Link to={`/foods/${id}`}>
-        <img src={image} alt='food pic' width='200px' height='120px' />
-        <p>{name}</p>
-        <p>{city}</p>
-        <p>{country}</p>
+        <img src={image} alt='food pic' width='300px' height='200px' />
+        <p>
+          {name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{city},{country}
+        </p>
       </Link>
     </div>
   )

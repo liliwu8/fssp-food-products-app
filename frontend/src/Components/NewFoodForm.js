@@ -38,6 +38,18 @@ console.log(food)
   return (
     <div className='New'>
       <form onSubmit={handleSubmit}>
+        <label htmlFor='image'>Image:</label>
+        <br/>
+        <input
+          id='image'
+          type='text'
+          name='image'
+          placeholder='http://'
+          value={food.image}
+          onChange={handleTextChange}
+        />
+        <br/>
+        <br/>
         <label htmlFor='original-name'> Original Name</label>
         <br />
         <input
@@ -129,7 +141,7 @@ console.log(food)
         />
         <br />
         <br />
-        <input type='submit' value='CREATE NEW FOOD' className='button' />
+        <input type='submit' value='CREATE NEW DISH' className='button' />
       </form>
     </div>
   )
