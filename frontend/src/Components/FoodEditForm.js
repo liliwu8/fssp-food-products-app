@@ -37,7 +37,7 @@ function FoodEditForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
     axios
-      .post(`${API}/food`, food)
+      .put(`${API}/foods/${id}`, food)
       .then((res) => {
         setFood(res.data)
         navigate('/foods')
@@ -50,6 +50,18 @@ function FoodEditForm() {
   return (
     <div className='New'>
       <form onSubmit={handleSubmit}>
+        <label htmlFor='image'>Image:</label>
+        <br />
+        <input
+          id='image'
+          type='text'
+          name='image'
+          placeholder='http://'
+          value={food.image}
+          onChange={handleTextChange}
+        />
+        <br />
+        <br />
         <label htmlFor='original-name'> Original Name</label>
         <br />
         <input

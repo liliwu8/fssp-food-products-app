@@ -43,7 +43,7 @@ foods.put('/:id', async (req, res) => {
    if (updatedAFood.id) {
      res.status(200).json({ payload: updatedAFood })
    } else {
-     res.status(404).json('snack not found')
+     res.status(404).json('not found')
    }
 })
 

@@ -35,7 +35,7 @@ const createFood = async (food) => {
   } = food
   try {
     const newfood = await db.one(
-      'insert into food (originalname, name, price, continent, city, country, image, ingredients) values ($1, $2, $3, $4, $5, $6, $7, $8) returning *',
+      'insert into food (originalname, name, price, continent, city, country, ingredients, image) values ($1, $2, $3, $4, $5, $6, $7, $8) returning *',
       [
         originalname,
         name,
@@ -69,19 +69,18 @@ const updateFood = async (id, food) => {
   } = food
   try {
     const updatesFood = await db.one(
-      'update food set originalname=$1, name=$2, price=$3, continent=$4, city=$5, country=$6, image=$7, ingredients=$8 where id = $9 returning * ',
+      'update food set originalname=$1, name=$2, price=$3, continent=$4, city=$5, country=$6, ingredients=$7, image=$8 where id = $9 returning * ',
       [
+       
         originalname,
         name,
         price,
         continent,
         city,
         country,
-        isValidUrl(image) ||
-          'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image',
-        ,
         ingredients,
-        id,
+        isValidUrl(image) ||
+          'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', id,
       ]
     )
     return updatesFood

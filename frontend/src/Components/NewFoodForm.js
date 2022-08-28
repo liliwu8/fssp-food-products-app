@@ -19,27 +19,26 @@ function NewFoodForm() {
   const handleTextChange = (event) => {
     setFood({ ...food, [event.target.id]: event.target.value })
   }
- const handleNumChange = (event) => {
-   setFood({ ...food, [event.target.id]: Number(event.target.value )})
- }
+  const handleNumChange = (event) => {
+    setFood({ ...food, [event.target.id]: Number(event.target.value) })
+  }
   const handleSubmit = (event) => {
     event.preventDefault()
     axios
-      .post(`${API}/food`, food)
-      .then((res) => {
-        setFood(res.data)
+      .post(`${API}/foods/new`, food)
+      .then(() => {
         navigate('/foods')
       })
       .catch((err) => {
         console.warn(err)
       })
   }
-console.log(food)
+
   return (
     <div className='New'>
       <form onSubmit={handleSubmit}>
         <label htmlFor='image'>Image:</label>
-        <br/>
+        <br />
         <input
           id='image'
           type='text'
@@ -48,8 +47,8 @@ console.log(food)
           value={food.image}
           onChange={handleTextChange}
         />
-        <br/>
-        <br/>
+        <br />
+        <br />
         <label htmlFor='original-name'> Original Name</label>
         <br />
         <input
