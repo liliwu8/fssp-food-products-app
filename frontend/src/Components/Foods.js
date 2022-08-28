@@ -13,22 +13,19 @@ function Foods() {
     })
   }, [])
   return (
-    <div>
-      <h1>All of the dish</h1>
-      <div>
-        {food.map((food,index) => {
-          return (
-            <Food
-              key={index}
-              id={food.id}
-              image={food.image}
-              name={food.name}
-              country={food.country}
-              city={food.city}
-            />
-          )
-        })}
-      </div>
+    <div className='flex justify-center flex-wrap gap-7 '>
+      {food.map((food, index) => {
+        return (
+          <Food
+            key={index}
+            id={food.id}
+            image={food.image}
+            name={food.name}
+            country={food.country}
+            city={food.city}
+          />
+        )
+      })}
     </div>
   )
 }
