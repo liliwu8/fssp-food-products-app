@@ -1,6 +1,5 @@
 import Food from '../Components/Food'
 import { useEffect, useState } from 'react'
-
 import axios from 'axios'
 const API = process.env.REACT_APP_API_URL
 
@@ -21,8 +20,7 @@ function Foods() {
             id={food.id}
             image={food.image}
             name={food.name}
-            country={food.country}
-            city={food.city}
+            location={food.location}
           />
         )
       })}

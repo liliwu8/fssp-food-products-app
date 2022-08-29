@@ -23,26 +23,15 @@ const getFood = async (id) => {
 
 //Create
 const createFood = async (food) => {
-  const {
-    originalname,
-    name,
-    price,
-    continent,
-    city,
-    country,
-    image,
-    ingredients,
-  } = food
+  const { originalname, name, price, location, image, ingredients } = food
   try {
     const newfood = await db.one(
-      'insert into food (originalname, name, price, continent, city, country, ingredients, image) values ($1, $2, $3, $4, $5, $6, $7, $8) returning *',
+      'insert into food (originalname, name, price, location, ingredients, image) values ($1, $2, $3, $4, $5, $6) returning *',
       [
         originalname,
         name,
         price,
-        continent,
-        city,
-        country,
+        location,
         ingredients,
         isValidUrl(image) ||
           'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image',
@@ -57,30 +46,19 @@ const createFood = async (food) => {
 
 //Update
 const updateFood = async (id, food) => {
-  const {
-    originalname,
-    name,
-    price,
-    continent,
-    city,
-    country,
-    ingredients,
-    image,
-  } = food
+  const { originalname, name, price, location, ingredients, image } = food
   try {
     const updatesFood = await db.one(
-      'update food set originalname=$1, name=$2, price=$3, continent=$4, city=$5, country=$6, ingredients=$7, image=$8 where id = $9 returning * ',
+      'update food set originalname=$1, name=$2, price=$3, location=$4, ingredients=$5, image=$6 where id = $7 returning * ',
       [
-       
         originalname,
         name,
         price,
-        continent,
-        city,
-        country,
+        location,
         ingredients,
         isValidUrl(image) ||
-          'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', id,
+          'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image',
+        id,
       ]
     )
     return updatesFood

@@ -32,33 +32,31 @@ function FoodDetails() {
   }
 
   return (
-    <article>
-      <div className='flex justify-center'>
+    <div className=' flex item-center justify-between '>
+      <div className=' ml-[6%]'>
         <img
           src={food.image}
           alt='dishpic'
-          width='300px'
-          height='200px'
-          className=' 	'
+          className='h-[300px] max-w-[400px] '
         />
       </div>
-      <div className='leading-9'>
+      <div className='leading-9 text-left ml-[20px] mr-[20%] '>
         <p>Original Name: {food.originalname}</p>
         <p>Name: {food.name}</p>
         <p>Price ${food.price}</p>
-        <p>City: {food.city}</p>
-        <p>Country: {food.country}</p>
-        <p>Continent: {food.continent}</p>
-        <p>Ingredients: {food.ingredients}</p>
+        <p>Location: {food.location}</p>
+        <p className='overflow-wrap: break-word'>
+          Ingredients: {food.ingredients}
+        </p>
+        <Link to={`/foods`}>
+          <button>Back</button>
+        </Link>
+        <Link to={`/foods/${id}/edit`}>
+          <button>Edit</button>
+        </Link>
+        <button onClick={handleDelete}>Delete</button>
       </div>
-      <Link to={`/foods`}>
-        <button>Back</button>
-      </Link>
-      <Link to={`/foods/${id}/edit`}>
-        <button>Edit</button>
-      </Link>
-      <button onClick={handleDelete}>Delete</button>
-    </article>
+    </div>
   )
 }
 

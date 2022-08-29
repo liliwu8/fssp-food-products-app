@@ -6,9 +6,7 @@ CREATE TABLE food (
     id SERIAL PRIMARY KEY,
     originalname TEXT, 
     name TEXT, 
-    price INT, 
-    continent TEXT, 
-    city text, 
-    country text,
+    price INT,  
+    location text, 
     image TEXT,
     ingredients text);

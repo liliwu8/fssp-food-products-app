@@ -10,9 +10,7 @@ function FoodEditForm() {
     originalname: '',
     name: '',
     price: 0,
-    continent: '',
-    city: '',
-    country: '',
+    location: '',
     image: '',
     ingredients: '',
   })
@@ -59,6 +57,7 @@ function FoodEditForm() {
           placeholder='http://'
           value={food.image}
           onChange={handleTextChange}
+          className=' h-8 px-2 text-sm text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline'
         />
         <br />
         <br />
@@ -72,6 +71,7 @@ function FoodEditForm() {
           onChange={handleTextChange}
           placeholder='Orginal Name'
           required
+          className='h-8 px-2 text-sm text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline'
         />
         <br />
         <br />
@@ -85,6 +85,7 @@ function FoodEditForm() {
           placeholder='name'
           onChange={handleTextChange}
           required
+          className='h-8 px-2 text-sm text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline'
         />
         <br />
         <br />
@@ -98,45 +99,21 @@ function FoodEditForm() {
           placeholder='amount'
           onChange={handleNumChange}
           required
+          className='h-8 px-2 text-sm text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline'
         />
         <br />
         <br />
-        <label htmlFor='continent'>Continent</label>
+        <label htmlFor='location'>Location</label>
         <br />
         <input
-          id='continent'
-          name='continent'
-          value={food.continent}
+          id='location'
+          name='location'
+          value={food.location}
           onChange={handleTextChange}
           type='text'
-          placeholder='continent'
+          placeholder='location'
           required
-        />
-        <br />
-        <br />
-        <label htmlFor='city'>City</label>
-        <br />
-        <input
-          id='city'
-          name='city'
-          value={food.city}
-          onChange={handleTextChange}
-          type='text'
-          placeholder='city'
-          required
-        />
-        <br />
-        <br />
-        <label htmlFor='country'>Country</label>
-        <br />
-        <input
-          id='country'
-          name='country'
-          value={food.country}
-          onChange={handleTextChange}
-          type='text'
-          placeholder='country'
-          required
+          className='h-8 px-2 text-sm text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline'
         />
         <br />
         <br />
@@ -150,6 +127,7 @@ function FoodEditForm() {
           type='text'
           placeholder='ingredients'
           required
+          className='h-8 px-2 text-sm text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline'
         />
         <br />
         <br />
@@ -157,7 +135,9 @@ function FoodEditForm() {
       </form>
       <br />
       <Link to={`/foods`}>
-        <button>Back</button>
+        <button className=' h-10 px-5 m-2 bg-[#DE5E39] text-white hover:bg-[#E87B35] font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'>
+          Back
+        </button>
       </Link>
     </div>
   )

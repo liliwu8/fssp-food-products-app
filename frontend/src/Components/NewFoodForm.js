@@ -46,6 +46,7 @@ function NewFoodForm() {
           placeholder='http://'
           value={food.image}
           onChange={handleTextChange}
+          className='h-8 px-2 text-sm text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline'
         />
         <br />
         <br />
@@ -59,6 +60,7 @@ function NewFoodForm() {
           onChange={handleTextChange}
           placeholder='Orginal Name'
           required
+          className='h-8 px-2 text-sm text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline'
         />
         <br />
         <br />
@@ -72,6 +74,7 @@ function NewFoodForm() {
           placeholder='name'
           onChange={handleTextChange}
           required
+          className='h-8 px-2 text-sm text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline'
         />
         <br />
         <br />
@@ -85,45 +88,21 @@ function NewFoodForm() {
           placeholder='amount'
           onChange={handleNumChange}
           required
+          className='h-8 px-2 text-sm text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline'
         />
         <br />
         <br />
-        <label htmlFor='continent'>Continent</label>
+        <label htmlFor='location'>Location</label>
         <br />
         <input
-          id='continent'
-          name='continent'
-          value={food.continent}
+          id='location'
+          name='location'
+          value={food.location}
           onChange={handleTextChange}
           type='text'
-          placeholder='continent'
+          placeholder='location'
           required
-        />
-        <br />
-        <br />
-        <label htmlFor='city'>City</label>
-        <br />
-        <input
-          id='city'
-          name='city'
-          value={food.city}
-          onChange={handleTextChange}
-          type='text'
-          placeholder='city'
-          required
-        />
-        <br />
-        <br />
-        <label htmlFor='country'>Country</label>
-        <br />
-        <input
-          id='country'
-          name='country'
-          value={food.country}
-          onChange={handleTextChange}
-          type='text'
-          placeholder='country'
-          required
+          className='h-8 px-2 text-sm text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline'
         />
         <br />
         <br />
@@ -137,6 +116,7 @@ function NewFoodForm() {
           type='text'
           placeholder='ingredients'
           required
+          className='h-8 px-2 text-sm text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline'
         />
         <br />
         <br />
