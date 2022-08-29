@@ -33,14 +33,24 @@ function FoodDetails() {
 
   return (
     <article>
-      <img src={food.image} alt='dishpic' width='300px' height='200px' />
-      <p>Original Name: {food.originalname}</p>
-      <p>Name: {food.name}</p>
-      <p>Price ${food.price}</p>
-      <p>City:{food.city}</p>
-      <p>Country:{food.country}</p>
-      <p>Continent: {food.continent}</p>
-      <p>Ingredients: {food.ingredients}</p>
+      <div className='flex justify-center'>
+        <img
+          src={food.image}
+          alt='dishpic'
+          width='300px'
+          height='200px'
+          className=' 	'
+        />
+      </div>
+      <div className='leading-9'>
+        <p>Original Name: {food.originalname}</p>
+        <p>Name: {food.name}</p>
+        <p>Price ${food.price}</p>
+        <p>City: {food.city}</p>
+        <p>Country: {food.country}</p>
+        <p>Continent: {food.continent}</p>
+        <p>Ingredients: {food.ingredients}</p>
+      </div>
       <Link to={`/foods`}>
         <button>Back</button>
       </Link>

@@ -11,7 +11,7 @@ const API = process.env.REACT_APP_API_KEY
 function Map() {
   const [place, setplace] = useState([])
 
-  let location = 'Londen, England'
+  let location = 'England'
 
   useEffect(() => {
     axios
