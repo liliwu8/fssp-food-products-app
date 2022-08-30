@@ -7,7 +7,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 function NavBar() {
   const [navOpen, setNavOpen] = useState(false)
   return (
-    <nav className='relative flex flex-wrap items-center justify-between px-2 py-3 bg-orange-500 mb-3'>
+    <nav className='relative flex flex-wrap items-center justify-between px-2 py-3 bg-orange-500 mb-3 shadow-lg sticky top-0 z-50'>
       <div className='container px-4 mx-auto flex flex-wrap items-center justify-between'>
         <div className='w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start'>
           <h1 className='text-4xl	 font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white'>

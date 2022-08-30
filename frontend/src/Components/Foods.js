@@ -11,6 +11,7 @@ function Foods() {
       setFood(res.data.payload)
     })
   }, [])
+
   return (
     <div className='flex justify-center flex-wrap gap-8 '>
       {food.map((food, index) => {
