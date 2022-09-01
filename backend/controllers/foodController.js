@@ -1,7 +1,9 @@
 const express = require('express')
 const foods = express.Router()
+const reviewsController = require('./reviewController')
 const { getAllFoods, getFood, createFood, updateFood, deleteFood} = require('../queries/food')
 
+foods.use('/:foods_id/reviews', reviewsController)
 
 //Index
 foods.get('/', async (req, res) => {

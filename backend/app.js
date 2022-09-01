@@ -2,6 +2,7 @@
 const express = require('express')
 const cors = require('cors')
 const foodController = require('./controllers/foodController')
+const reviewsController = require('./controllers/reviewController')
 
 //Configuration
 const app = express()
@@ -10,6 +11,7 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 app.use('/foods', foodController)
+app.use('/reviews', reviewsController)
 
 //Routes
 app.get('/', (req, res) => {

@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 const API = process.env.REACT_APP_API_URL
 
-function NewFoodForm() {
+function NewFoodForm({ locate }) {
   const navigate = useNavigate()
   const [food, setFood] = useState({
     originalname: '',
@@ -33,7 +33,7 @@ function NewFoodForm() {
         console.warn(err)
       })
   }
-
+  console.log(locate)
   return (
     <div className='New'>
       <form onSubmit={handleSubmit}>

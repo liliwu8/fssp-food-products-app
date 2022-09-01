@@ -9,6 +9,7 @@ import { Routes, Route } from 'react-router-dom'
 import NavBar from './Components/NavBar'
 import Map from './Components/Map'
 
+
 function App() {
   return (
     <div className='App'>
@@ -21,7 +22,7 @@ function App() {
           <Route path='/foods/:id' element={<Show />} />
           <Route path='/foods/:id/edit' element={<Edit />} />
           <Route path='*' element={<FourOFour />} />
-          <Route path='/map' element={<Map/>}/>
+          {/* <Route path='/map' element={<Map/>}/> */}
         </Routes>
       </main>
     </div>
