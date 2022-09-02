@@ -1,7 +1,9 @@
+// import world from './World Cusine.png'
 function Home() {
   return (
-    <div className='text-[50px] text-center '>
-      <h2>Welcome To the International dishes app!</h2>
+    <div className=''>
+      {/* <h2 >Welcome To the International dishes app!</h2> */}
+      {/* <img src={world } /> */}
     </div>
   )
 }

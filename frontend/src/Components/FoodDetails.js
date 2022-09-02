@@ -1,7 +1,8 @@
 import axios from 'axios'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams, Link } from 'react-router-dom'
-import StarRating from './StarRating'
+import Review from './Review'
+
 const API = process.env.REACT_APP_API_URL
 
 function FoodDetails() {
@@ -44,33 +45,44 @@ function FoodDetails() {
               <img
                 src={food.image}
                 alt='dishpic'
-                className='lg:w-1/2 lg:h-1/2   object-contain md:object-cover object-center rounded'
+                className='lg:w-1/2 lg:h-1/2  object-contain md:object-cover object-center rounded'
               />
-              <div className='lg:w-1/2 lg:pl-10 lg: lg:h-1/2 lg:mt-0 text-left leading-8'>
-                <p>Original Name: {food.originalname}</p>
-                <p>Name: {food.name}</p>
-                <StarRating/>
-                <p>Price: {dollarUS.format(food.price)}</p>
-                <p>Location: {food.location}</p>
-                <p className='pb-1'>Ingredients: {food.ingredients}</p>
+              <div className='lg:w-1/2 lg:pl-10 lg: lg:h-1/2 lg:mt-0 text-left leading-8 text-[18px]'>
+                <p>
+                  <strong>Original Name:</strong> {food.originalname}
+                </p>
+                <p>
+                  <strong>Name:</strong> {food.name}
+                </p>
+                
+                <p>
+                  <strong>Price:</strong> {dollarUS.format(food.price)}
+                </p>
+                <p>
+                  <strong>Location:</strong> {food.location}
+                </p>
+                <p className='pb-1'>
+                  <strong>Ingredients:</strong> {food.ingredients}
+                </p>
                 <Link to={`/foods`}>
-                  <button>Back</button>
+                  <button className='h-10 px-5 m-2 bg-[#DE5E39] text-white hover:bg-[#E87B35] font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'>
+                    Back
+                  </button>
                 </Link>
                 <Link to={`/foods/${id}/edit`}>
-                  <button>Edit</button>
+                  <button className='h-10 px-5 m-2 bg-[#DE5E39] text-white hover:bg-[#E87B35] font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'>
+                    Edit
+                  </button>
                 </Link>
-                <button onClick={handleDelete}>Delete</button>
+                <button
+                  class='h-10 px-5 m-2 bg-[#C83E2D] text-white hover:bg-[#D65B4C] font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'
+                  onClick={handleDelete}
+                >
+                  Delete
+                </button>
               </div>
             </div>
-            <div>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </div>
+            {/* <Review/> */}
           </div>
         </article>
       </section>

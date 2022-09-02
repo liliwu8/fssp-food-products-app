@@ -2,18 +2,22 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
-// import logo from './logo.png'
+import WorldCusine from './World_Cusine.png'
 
 function NavBar() {
   const [navOpen, setNavOpen] = useState(false)
   return (
-    <nav className='relative flex flex-wrap items-center justify-between px-2 py-3 bg-orange-500 mb-3 shadow-lg sticky top-0 z-50'>
-      <div className='container px-4 mx-auto flex flex-wrap items-center justify-between'>
+    <nav className='relative flex flex-wrap items-center justify-between bg-[#5E3D2B] mb-3 shadow-[0px_10px_50px_1px_rgba(0,0,0,0.50)] sticky top-0 z-50'>
+      <div className='container px-2 mx-auto flex flex-wrap items-center justify-between'>
         <div className='w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start'>
           <h1 className='text-4xl	 font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white'>
             <Link to='/'>
-              {/* <img src={logo} alt='logo' width={100} /> */}
-              Home
+              <img
+                src={WorldCusine}
+                alt='logo'
+                width={100}
+                className='transform scale-125'
+              />
             </Link>
           </h1>
           <button
@@ -42,7 +46,7 @@ function NavBar() {
             </li>
             <li>
               <h1 className='px-3 py-2 flex items-center text-4xl uppercase font-bold leading-snug text-white hover:opacity-75'>
-                <Link to='/map'>Map</Link>
+                <Link to='/reviews'>reviews</Link>
               </h1>
             </li>
           </ul>

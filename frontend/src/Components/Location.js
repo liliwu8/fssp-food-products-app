@@ -1,15 +1,15 @@
-import { GoogleMap, LoadScript, MarkerF } from '@react-google-maps/api'
+// import { GoogleMap, LoadScript, MarkerF } from '@react-google-maps/api'
 
-import { useEffect, useState } from 'react'
-import axios from 'axios'
-const API = process.env.REACT_APP_API_KEY
+// import { useEffect, useState } from 'react'
+// import axios from 'axios'
+// const API = process.env.REACT_APP_API_KEY
 
-const containerStyle = {
-  width: 'auto',
-  height: '600px',
-}
-function Location({ local }) {
-  const [place, setPlace] = useState([])
+// const containerStyle = {
+//   width: 'auto',
+//   height: '600px',
+// }
+// function Location({ local }) {
+//   const [place, setPlace] = useState([])
 
   // useEffect(() => {
   //   axios
@@ -27,7 +27,7 @@ function Location({ local }) {
   //     })
   // }, [])
 
-  console.log(place)
+  // console.log(place)
   
   // return (
     // <>
@@ -42,6 +42,6 @@ function Location({ local }) {
     //   </LoadScript>
     // </>
   // )
-}
+// }
 
-export default Location
+// export default Location

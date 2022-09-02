@@ -1,33 +1,33 @@
-import { GoogleMap, LoadScript, MarkerF } from '@react-google-maps/api'
-import { useEffect, useState } from 'react'
-import axios from 'axios'
-import Location from './Location'
-// const API = process.env.REACT_APP_API_KEY
-const API = process.env.REACT_APP_API_URL
+// import { GoogleMap, LoadScript, MarkerF } from '@react-google-maps/api'
+// import { useEffect, useState } from 'react'
+// import axios from 'axios'
+// import Location from './Location'
+// // const API = process.env.REACT_APP_API_KEY
+// const API = process.env.REACT_APP_API_URL
 
-const containerStyle = {
-  width: 'auto',
-  height: '600px',
-}
+// const containerStyle = {
+//   width: 'auto',
+//   height: '600px',
+// }
 
-function Map() {
+// function Map() {
   // const [place, setPlace] = useState([])
 
   // let location = 'England, London'
 
-  const [food, setFood] = useState([])
+  // const [food, setFood] = useState([])
 
-  useEffect(() => {
-    axios
-      .get(`${API}/foods`)
-      .then((res) => {
-        setFood(res.data.payload)
-      })
-      .catch((error) => {
-        console.log(error)
-      })
-  }, [])
-  let one = food.map((fo) => fo.location).slice(0,2)
+  // useEffect(() => {
+  //   axios
+  //     .get(`${API}/foods`)
+  //     .then((res) => {
+  //       setFood(res.data.payload)
+  //     })
+  //     .catch((error) => {
+  //       console.log(error)
+  //     })
+  // }, [])
+  // let one = food.map((fo) => fo.location).slice(0,2)
   //    return (
   //      <div>
   //        {food.map((fo) => {
@@ -51,15 +51,15 @@ function Map() {
   //     })
   // }, [])
 
-  return (
-    <>
-      {/* {one &&
-        one.map((fo, index) => {
-          return <Location local={fo} key={index} />
-        })} */}
-      {one && <Location local={one} />}
-    </>
-  )
+  // return (
+    // <>
+    //    {one &&
+    //     one.map((fo, index) => {
+    //       return <Location local={fo} key={index} />
+    //     })} 
+    //    {one && <Location local={one} />}
+    // </> 
+  // )
 
   // return (
   //   <LoadScript googleMapsApiKey={API}>
@@ -72,9 +72,9 @@ function Map() {
   //     </GoogleMap>
   //   </LoadScript>
   // )
-}
+// }
 
-export default Map
+// export default Map
 
 //   return center.lat && center.lng ? (
 //     <LoadScript googleMapsApiKey={API}>

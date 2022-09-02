@@ -131,7 +131,11 @@ function FoodEditForm() {
         />
         <br />
         <br />
-        <input type='submit' value='EDIT NEW DISH' className='button' />
+        <input
+          type='submit'
+          value='EDIT NEW DISH'
+          className='h-10 px-5 m-2 bg-[#DE5E39] text-white hover:bg-[#E87B35] font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'
+        />
       </form>
       <br />
       <Link to={`/foods`}>

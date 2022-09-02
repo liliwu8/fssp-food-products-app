@@ -6,7 +6,7 @@ function Food({ image, id, name, location }) {
       <Link to={`/foods/${id}`}>
         <img src={image} alt='food pic' className='w-[300px] h-[200px]' />
         <div className='flex justify-center'>
-          <p>
+          <p className='font-bold'>
             {name}&nbsp;&nbsp;&nbsp;&nbsp;{location}
           </p>
         </div>
