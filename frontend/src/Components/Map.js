@@ -2,7 +2,7 @@
 // import { useEffect, useState } from 'react'
 // import axios from 'axios'
 // import Location from './Location'
-// // const API = process.env.REACT_APP_API_KEY
+// const API = process.env.REACT_APP_API_KEY
 // const API = process.env.REACT_APP_API_URL
 
 // const containerStyle = {
@@ -27,14 +27,15 @@
   //       console.log(error)
   //     })
   // }, [])
+
   // let one = food.map((fo) => fo.location).slice(0,2)
-  //    return (
-  //      <div>
-  //        {food.map((fo) => {
-  //          return fo.location
-  //        })}
-  //      </div>
-  //    )
+    //  return (
+    //    <div>
+    //      {food.map((fo) => {
+    //        return fo.location
+    //      })}
+    //    </div>
+    //  )
   // useEffect(() => {
   //   axios
   //     .get('https://maps.googleapis.com/maps/api/geocode/json', {
@@ -52,13 +53,13 @@
   // }, [])
 
   // return (
-    // <>
-    //    {one &&
-    //     one.map((fo, index) => {
-    //       return <Location local={fo} key={index} />
-    //     })} 
-    //    {one && <Location local={one} />}
-    // </> 
+  //   <>
+  //      {one &&
+  //       one.map((fo, index) => {
+  //         return <Location local={fo} key={index} />
+  //       })} 
+       {/* {one && <Location local={one} />} */}
+  //   </> 
   // )
 
   // return (

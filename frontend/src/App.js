@@ -19,8 +19,8 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/foods' element={<Index />} />
           <Route path='/foods/new' element={<New />} />
-          <Route exact path='/foods/:id' element={<Show />} />
-          <Route path='/foods/:id/edit' element={<Edit />} />
+          <Route path='/foods/:foodId' element={<Show />} />
+          <Route path='/foods/:foodId/edit' element={<Edit />} />
           <Route path='*' element={<FourOFour />} />
           {/* <Route path='/map' element={<Map/>}/> */}
           <Route path='/reviews' element={<Reviews />} />

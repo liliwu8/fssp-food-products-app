@@ -6,22 +6,21 @@ import ReviewForm from './ReviewForm'
 const API = process.env.REACT_APP_API_URL
 
 function Reviews() {
-
   const [reviews, setReviews] = useState([])
-  let {id } = useParams()
+  let { foodId } = useParams()
 
   useEffect(() => {
-    axios.get(`${API}/foods/${id}/reviews`).then((res) => {
-      setReviews(res.data)
-      console.log(res)
-    })
-  }, [id])
-  
-  console.log(`${id}`)
-  
+    axios
+      .get(`${API}/foods/${foodId}/reviews`)
+      .then((res) => {
+        setReviews(res.data)
+      })
+      .catch((err) => console.log(err))
+  }, [foodId])
+
   const handleAdd = (newReview) => {
     axios
-      .post(`${API}/foods/${id}/reviews`, newReview)
+      .post(`${API}/foods/${foodId}/reviews`, newReview)
       .then((response) => {
         setReviews([response.data, ...reviews])
       })
@@ -30,24 +29,21 @@ function Reviews() {
 
   const handleDelete = (id) => {
     axios
-      .delete(`${API}/foods/${id}/reviews/${id}`)
-      .then(
-        () => {
-          const copyReviewArray = [...reviews]
-          const indexDeletedReview = copyReviewArray.findIndex((review) => {
-            return review.id === id
-          })
-          copyReviewArray.splice(indexDeletedReview, 1)
-          setReviews(copyReviewArray)
-        },
-        (error) => console.error(error)
-      )
+      .delete(`${API}/foods/${foodId}/reviews/${id}`)
+      .then(() => {
+        const copyReviewArray = [...reviews]
+        const indexDeletedReview = copyReviewArray.findIndex((review) => {
+          return review.id === id
+        })
+        copyReviewArray.splice(indexDeletedReview, 1)
+        setReviews(copyReviewArray)
+      })
       .catch((c) => console.warn('catch', c))
   }
 
   const handleEdit = (updatedReview) => {
     axios
-      .put(`${API}/foods/${id}/reviews/${updatedReview.id}`, updatedReview)
+      .put(`${API}/foods/${foodId}/reviews/${updatedReview.id}`, updatedReview)
       .then((response) => {
         const copyReviewArray = [...reviews]
         const indexUpdatedReview = copyReviewArray.findIndex((review) => {
@@ -61,7 +57,7 @@ function Reviews() {
 
   return (
     <section>
-      <h2>Reviews</h2>
+      <h2 className='flex-4'>Reviews</h2>
       <ReviewForm handleSubmit={handleAdd}>
         <h3>Add a New Review</h3>
       </ReviewForm>

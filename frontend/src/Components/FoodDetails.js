@@ -1,13 +1,13 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams, Link } from 'react-router-dom'
-import Review from './Review'
+import Reviews from './Reviews'
 
 const API = process.env.REACT_APP_API_URL
 
 function FoodDetails() {
   const [food, setFood] = useState([])
-  const { id } = useParams()
+  const { foodId } = useParams()
   let navigate = useNavigate()
   let dollarUS = Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -16,18 +16,18 @@ function FoodDetails() {
 
   useEffect(() => {
     axios
-      .get(`${API}/foods/${id}`)
+      .get(`${API}/foods/${foodId}`)
       .then((res) => {
         setFood(res.data.payload)
       })
       .catch(() => {
         navigate('/not-found')
       })
-  }, [id, navigate])
+  }, [foodId, navigate])
 
   const handleDelete = () => {
     axios
-      .delete(`${API}/foods/${id}`)
+      .delete(`${API}/foods/${foodId}`)
       .then(() => {
         navigate('/foods')
       })
@@ -54,7 +54,7 @@ function FoodDetails() {
                 <p>
                   <strong>Name:</strong> {food.name}
                 </p>
-                
+
                 <p>
                   <strong>Price:</strong> {dollarUS.format(food.price)}
                 </p>
@@ -69,20 +69,20 @@ function FoodDetails() {
                     Back
                   </button>
                 </Link>
-                <Link to={`/foods/${id}/edit`}>
+                <Link to={`/foods/${food.Id}/edit`}>
                   <button className='h-10 px-5 m-2 bg-[#DE5E39] text-white hover:bg-[#E87B35] font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'>
                     Edit
                   </button>
                 </Link>
                 <button
-                  class='h-10 px-5 m-2 bg-[#C83E2D] text-white hover:bg-[#D65B4C] font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'
+                  className='h-10 px-5 m-2 bg-[#C83E2D] text-white hover:bg-[#D65B4C] font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'
                   onClick={handleDelete}
                 >
                   Delete
                 </button>
               </div>
             </div>
-            {/* <Review/> */}
+            <Reviews />
           </div>
         </article>
       </section>

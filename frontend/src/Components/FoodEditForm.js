@@ -5,7 +5,7 @@ const API = process.env.REACT_APP_API_URL
 
 function FoodEditForm() {
   const navigate = useNavigate()
-  const { id } = useParams()
+  const { foodId } = useParams()
   const [food, setFood] = useState({
     originalname: '',
     name: '',
@@ -17,14 +17,14 @@ function FoodEditForm() {
 
   useEffect(() => {
     axios
-      .get(`${API}/foods/${id}`)
+      .get(`${API}/foods/${foodId}`)
       .then((res) => {
         setFood(res.data.payload)
       })
       .catch((err) => {
         console.log(err)
       })
-  }, [id])
+  }, [foodId])
 
   const handleTextChange = (event) => {
     setFood({ ...food, [event.target.id]: event.target.value })
@@ -35,7 +35,7 @@ function FoodEditForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
     axios
-      .put(`${API}/foods/${id}`, food)
+      .put(`${API}/foods/${food.Id}`, food)
       .then((res) => {
         setFood(res.data)
         navigate('/foods')

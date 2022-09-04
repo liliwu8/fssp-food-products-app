@@ -4,13 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import WorldCusine from './World_Cusine.png'
 
+
 function NavBar() {
   const [navOpen, setNavOpen] = useState(false)
   return (
-    <nav className='relative flex flex-wrap items-center justify-between bg-[#5E3D2B] mb-3 shadow-[0px_10px_50px_1px_rgba(0,0,0,0.50)] sticky top-0 z-50'>
+    <nav className='relative flex flex-wrap items-center justify-between bg-[#4A240D] mb-3 shadow-[0px_10px_50px_1px_rgba(0,0,0,0.50)] sticky top-0 z-50'>
       <div className='container px-2 mx-auto flex flex-wrap items-center justify-between'>
         <div className='w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start'>
-          <h1 className='text-4xl	 font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white'>
+          <h1 className='text-4xl	 font-bold leading-relaxed inline-block mr-4 whitespace-nowrap uppercase text-white'>
             <Link to='/'>
               <img
                 src={WorldCusine}
@@ -35,19 +36,19 @@ function NavBar() {
         >
           <ul className='flex flex-col lg:flex-row list-none lg:ml-auto'>
             <li>
-              <h1 className='px-3 py-2 flex items-center text-4xl uppercase font-bold leading-snug text-white hover:opacity-75'>
+              <h1 className='px-3 py-2 flex items-center text-4xl uppercase font-bold leading-snug text-[#EBB755] hover:text-white'>
                 <Link to='/foods'>Dish</Link>
               </h1>
             </li>
             <li>
-              <h1 className='px-3 py-2 flex items-center text-4xl	uppercase font-bold leading-snug text-white hover:opacity-75'>
+              <h1 className='px-3 py-2 flex items-center text-4xl	uppercase font-bold leading-snug text-[#EBB755] hover:text-white'>
                 <Link to='/foods/new'>New Dish</Link>
               </h1>
             </li>
             <li>
-              <h1 className='px-3 py-2 flex items-center text-4xl uppercase font-bold leading-snug text-white hover:opacity-75'>
-                <Link to='/reviews'>reviews</Link>
-              </h1>
+              {/* <h1 className='px-3 py-2 flex items-center text-4xl uppercase font-bold leading-snug text-[#EBB755] hover:text-white'>
+                <Link to='/reviews'>Review</Link>
+              </h1> */}
             </li>
           </ul>
         </div>
