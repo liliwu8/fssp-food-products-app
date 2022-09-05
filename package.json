@@ -2,8 +2,9 @@
   "name": "fssp-food-products-ecommerce-app",
   "version": "1.0.0",
   "description": "fullstack food product ecommerce app",
-  "main": "index.js",
+  "main": "backend/server.js",
   "scripts": {
+    "start":"cd backend && npm install && node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Li Li Wu",
