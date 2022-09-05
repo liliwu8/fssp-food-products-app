@@ -13,7 +13,7 @@ function Foods() {
   }, [])
 
   return (
-    <div className='flex justify-center flex-wrap gap-8 '>
+    <div className='flex justify-center flex-wrap gap-8 animatecss animatecss-delay-1s  animatecss-fadeInUp '>
       {food.map((food, index) => {
         return (
           <Food

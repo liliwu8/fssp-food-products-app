@@ -42,7 +42,7 @@ function ReviewForm(props) {
       {props.children}
       <form
         onSubmit={handleSubmit}
-        className='bg-white p-10 rounded-lg shadow md:w-3/4 mx-auto lg:w-1/2 '
+        className='bg-[#FDEEDC] p-10 rounded-lg shadow md:w-3/4 mx-auto lg:w-1/2 '
       >
         <br />
         <div className='mb-5'>
@@ -102,7 +102,7 @@ function ReviewForm(props) {
         <input
           type='Submit'
           value='Submit Review'
-          className='h-10 px-5 m-2 bg-[#DE5E39] text-white hover:bg-[#E87B35] font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'
+          className='h-10 px-5 m-2 bg-[#202053] text-white hover:bg-[#4040A6] font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'
         />
       </form>
     </div>

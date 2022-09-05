@@ -1,14 +1,21 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import WorldCusine from './World_Cusine.png'
 
-
-function NavBar() {
+function NavBar({ cart }) {
   const [navOpen, setNavOpen] = useState(false)
+  const cartTotal = (carts) => {
+    let sum = 0
+    for (let food of carts) {
+      sum += food.quantity
+    }
+    return sum
+  }
+
   return (
-    <nav className='relative flex flex-wrap items-center justify-between bg-[#4A240D] mb-3 shadow-[0px_10px_50px_1px_rgba(0,0,0,0.50)] sticky top-0 z-50'>
+    <nav className='relative flex flex-wrap items-center justify-between bg-[#202056] mb-3 shadow-[0px_10px_50px_1px_rgba(0,0,0,0.50)] sticky top-0 z-50'>
       <div className='container px-2 mx-auto flex flex-wrap items-center justify-between'>
         <div className='w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start'>
           <h1 className='text-4xl	 font-bold leading-relaxed inline-block mr-4 whitespace-nowrap uppercase text-white'>
@@ -46,9 +53,12 @@ function NavBar() {
               </h1>
             </li>
             <li>
-              {/* <h1 className='px-3 py-2 flex items-center text-4xl uppercase font-bold leading-snug text-[#EBB755] hover:text-white'>
-                <Link to='/reviews'>Review</Link>
-              </h1> */}
+              <h1 className='px-3 py-2 flex items-center text-3xl uppercase font-bold leading-snug text-[#EBB755] hover:text-white'>
+                <Link to='/cart'>
+                  <FontAwesomeIcon icon={faShoppingCart} />
+                  <span>{cartTotal(cart)}</span>
+                </Link>
+              </h1>
             </li>
           </ul>
         </div>

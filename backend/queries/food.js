@@ -33,8 +33,7 @@ const createFood = async (food) => {
         price,
         location,
         ingredients,
-        isValidUrl(image) ||
-          'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image',
+        isValidUrl(image),
       ]
     )
     return newfood

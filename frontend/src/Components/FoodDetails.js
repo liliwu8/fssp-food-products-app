@@ -2,10 +2,9 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams, Link } from 'react-router-dom'
 import Reviews from './Reviews'
-
 const API = process.env.REACT_APP_API_URL
 
-function FoodDetails() {
+function FoodDetails({ addCart }) {
   const [food, setFood] = useState([])
   const { foodId } = useParams()
   let navigate = useNavigate()
@@ -54,7 +53,6 @@ function FoodDetails() {
                 <p>
                   <strong>Name:</strong> {food.name}
                 </p>
-
                 <p>
                   <strong>Price:</strong> {dollarUS.format(food.price)}
                 </p>
@@ -65,12 +63,12 @@ function FoodDetails() {
                   <strong>Ingredients:</strong> {food.ingredients}
                 </p>
                 <Link to={`/foods`}>
-                  <button className='h-10 px-5 m-2 bg-[#DE5E39] text-white hover:bg-[#E87B35] font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'>
+                  <button className='h-10 px-5 m-2 bg-[#202053] text-white hover:bg-[#4040A6] font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'>
                     Back
                   </button>
                 </Link>
-                <Link to={`/foods/${food.Id}/edit`}>
-                  <button className='h-10 px-5 m-2 bg-[#DE5E39] text-white hover:bg-[#E87B35] font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'>
+                <Link to={`/foods/${foodId}/edit`}>
+                  <button className='h-10 px-5 m-2 bg-[#202053] text-white hover:bg-[#4040A6] font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'>
                     Edit
                   </button>
                 </Link>
@@ -79,6 +77,12 @@ function FoodDetails() {
                   onClick={handleDelete}
                 >
                   Delete
+                </button>
+                <button
+                  onClick={() => addCart(food)}
+                  className='h-10 px-5 m-2 bg-[#13348E] text-white hover:bg-[#1A48C6] font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'
+                >
+                  add cart
                 </button>
               </div>
             </div>

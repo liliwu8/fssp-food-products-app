@@ -123,7 +123,7 @@ function NewFoodForm({ locate }) {
         <input
           type='submit'
           value='CREATE NEW DISH'
-          className='h-10 px-5 m-2 bg-[#4A240D] text-white hover:bg-[#E87B35] font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'
+          className='h-10 px-5 m-2 bg-[#202053] text-white hover:bg-[#4040A6] font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'
         />
       </form>
     </div>

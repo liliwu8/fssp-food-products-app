@@ -15,11 +15,11 @@ const getAllReviews = async (foods_id) => {
 //create
 const createReview = async (
   foods_id,
-  { reviewer, title, content, rating }
+  { reviewer, content, rating }
 ) => {
   try {
     const newReview = await db.one(
-      'INSERT INTO reviews (reviewer, title, content, rating, foods_id) VALUES($1, $2, $3, $4, $5) RETURNING *',
+      'INSERT INTO reviews (reviewer, content, rating, foods_id) VALUES($1, $2, $3, $4, $5) RETURNING *',
       [reviewer, title, content, rating, foods_id]
     )
     return newReview
@@ -56,12 +56,12 @@ const deleteReview = async (id) => {
 const updateReview = async (
   id,
   foods_id,
-  { reviewer, title, content, rating }
+  { reviewer, content, rating }
 ) => {
   try {
     const updateReview = await db.one(
-      'UPDATE reviews SET reviewer=$1, title=$2, content=$3, rating=$4, foods_id=$5 where id=$6 RETURNING *',
-      [reviewer, title, content, rating, foods_id, id]
+      'UPDATE reviews SET reviewer=$1, content=$2, rating=$3, foods_id=$4 where id=$5 RETURNING *',
+      [reviewer, content, rating, foods_id, id]
     )
     return updateReview
   } catch (error) {

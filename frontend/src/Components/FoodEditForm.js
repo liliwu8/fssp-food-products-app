@@ -6,6 +6,7 @@ const API = process.env.REACT_APP_API_URL
 function FoodEditForm() {
   const navigate = useNavigate()
   const { foodId } = useParams()
+
   const [food, setFood] = useState({
     originalname: '',
     name: '',
@@ -35,7 +36,7 @@ function FoodEditForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
     axios
-      .put(`${API}/foods/${food.Id}`, food)
+      .put(`${API}/foods/${foodId}`, food)
       .then((res) => {
         setFood(res.data)
         navigate('/foods')
@@ -133,7 +134,7 @@ function FoodEditForm() {
         <br />
         <input
           type='submit'
-          value='EDIT NEW DISH'
+          value='EDIT DISH'
           className='h-10 px-5 m-2 bg-[#DE5E39] text-white hover:bg-[#E87B35] font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'
         />
       </form>
