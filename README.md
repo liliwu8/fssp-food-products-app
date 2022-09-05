@@ -1,6 +1,6 @@
-# Board Game Review App
+# 
 
-This is a board game review app - I poured my heart and soul into this, I hope you enjoy!
+
 
 ## Important Links
 
