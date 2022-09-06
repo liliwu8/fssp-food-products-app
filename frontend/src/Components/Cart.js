@@ -32,6 +32,7 @@ function Cart({ carts, setCart }) {
                   src={food.image}
                   alt='dishpic'
                   className='lg:w-[40%] lg:h-[40%]  object-contain md:object-cover object-center rounded'
+                  key={food.id}
                 />
                 <div className='lg:w-1/2 lg:pl-10 lg: lg:h-1/2 lg:mt-0 text-left leading-8 text-[18px]'>
                   <p>
