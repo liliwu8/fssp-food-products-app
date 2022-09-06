@@ -1,7 +1,4 @@
-
-
 function Cart({ carts, setCart }) {
-  console.log(carts)
   let dollarUS = Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
@@ -20,8 +17,11 @@ function Cart({ carts, setCart }) {
     setCart(carts.filter((cart) => cart !== removefood))
   }
 
+  // const handleClick = () => {
+  //   alert('Thank You for shopping!')
+  // }
+
   const cartItems = carts.map((food) => {
-    console.log(carts)
     return (
       <div className='mt-16 mx-auto px-2 lg:px-50 flex-grow h-full w-full ml-[1%]'>
         <section className='h-full'>
@@ -71,7 +71,12 @@ function Cart({ carts, setCart }) {
             Total: {dollarUS.format(cartTotal(carts))}
           </h1>
           {cartItems}
-          <button>Checkout</button>
+          {/* <button
+            onClick={handleClick}
+            className='h-10 px-5 m-2 bg-[#13348E] text-white hover:bg-[#1A48C6] font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'
+          >
+            Checkout
+          </button> */}
         </>
       )}
     </>
