@@ -35,6 +35,7 @@ function App() {
     setCart(newCart)
   }
 
+
   return (
     <div className='App'>
       <NavBar cart={cart} />
