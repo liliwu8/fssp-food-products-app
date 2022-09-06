@@ -1,5 +1,5 @@
 # world cuisine
-Ecommerce like shop where you can get your dish around the world.
+Ecommerce like shop where you can get your dishes around the world.
 
 
 ## Important Links
