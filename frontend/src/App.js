@@ -34,7 +34,7 @@ function App() {
     }
     setCart(newCart)
   }
-console.log(cart)
+
   return (
     <div className='App'>
       <NavBar cart={cart} />

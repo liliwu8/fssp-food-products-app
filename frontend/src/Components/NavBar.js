@@ -5,7 +5,7 @@ import { faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import WorldCusine from './World_Cusine.png'
 
 function NavBar({ cart }) {
-  console.log(cart)
+
   const [navOpen, setNavOpen] = useState(false)
   const cartTotal = (carts) => {
     let sum = 0
