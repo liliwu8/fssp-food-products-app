@@ -12,7 +12,7 @@ import Cart from './Components/Cart'
 import { useEffect, useState } from 'react'
 
 function App() {
-const cartStore = JSON.parse(localStorage.getItem('cart')) || '[]'
+  const cartStore = JSON.parse(localStorage.getItem('cart')) || '[]'
   const [cart, setCart] = useState(cartStore)
 
   useEffect(() => {
@@ -34,7 +34,7 @@ const cartStore = JSON.parse(localStorage.getItem('cart')) || '[]'
     }
     setCart(newCart)
   }
-
+console.log(cart)
   return (
     <div className='App'>
       <NavBar cart={cart} />

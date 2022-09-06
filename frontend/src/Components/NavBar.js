@@ -5,6 +5,7 @@ import { faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import WorldCusine from './World_Cusine.png'
 
 function NavBar({ cart }) {
+  console.log(cart)
   const [navOpen, setNavOpen] = useState(false)
   const cartTotal = (carts) => {
     let sum = 0
@@ -56,7 +57,7 @@ function NavBar({ cart }) {
               <h1 className='px-3 py-2 flex items-center text-3xl uppercase font-bold leading-snug text-[#EBB755] hover:text-white'>
                 <Link to='/cart'>
                   <FontAwesomeIcon icon={faShoppingCart} />
-                  <span>{cartTotal(cart)}</span>
+                  {cartTotal(cart)}
                 </Link>
               </h1>
             </li>

@@ -1,6 +1,7 @@
-// import CartItems from './CartItems'
+
 
 function Cart({ carts, setCart }) {
+  console.log(carts)
   let dollarUS = Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
@@ -20,6 +21,7 @@ function Cart({ carts, setCart }) {
   }
 
   const cartItems = carts.map((food) => {
+    console.log(carts)
     return (
       <div className='mt-16 mx-auto px-2 lg:px-50 flex-grow h-full w-full ml-[1%]'>
         <section className='h-full'>
