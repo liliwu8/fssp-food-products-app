@@ -10,13 +10,16 @@ import NavBar from './Components/NavBar'
 // import Map from './Components/Map'
 import Cart from './Components/Cart'
 import { useEffect, useState } from 'react'
-
+ const cartStore = JSON.parse(localStorage.getItem('cart') || '[]') 
 function App() {
-  const cartStore = JSON.parse(localStorage.getItem('cart')) || '[]'
+ 
+
   const [cart, setCart] = useState(cartStore)
 
+  console.log(cart)
+  
   useEffect(() => {
-  localStorage.setItem('cart', JSON.stringify(cart))
+  localStorage.setItem('cart', JSON.stringify(...cart))
 },[cart])
   
   const addCart = (item) => {
@@ -33,6 +36,7 @@ function App() {
       newCart.push(itemInCart)
     }
     setCart(newCart)
+    console.log(newCart)
   }
 
 
