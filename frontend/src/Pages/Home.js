@@ -1,5 +1,5 @@
 // import world from './World Cusine.png'
-import giphy from './giphy.gif'
+// import giphy from './giphy.gif'
 function Home() {
   return (
     <div>
