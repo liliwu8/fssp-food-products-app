@@ -39,7 +39,7 @@ function FoodDetails({ addCart }) {
     <div className='mt-16 mx-auto px-2 lg:px-50 flex-grow h-full w-full'>
       <section className='h-full'>
         <article className=' overflow-hidden'>
-          <div className='container px-5  mx-auto'>
+          <div className='container px-5 mx-auto'>
             <div className=' lg:w-4/5 mx-auto flex flex-wrap'>
               <img
                 src={food.image}
