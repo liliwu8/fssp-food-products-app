@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
-import WorldCusine from './World_Cusine.png'
+import WorldCusine from './World_Cuisine.png'
 
 function NavBar({ cart }) {
   const [navOpen, setNavOpen] = useState(false)
