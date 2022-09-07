@@ -25,7 +25,7 @@ function Cart({ carts, setCart }) {
   const clearCart = () => {
     setCart([])
     axios
-      .get(`${API}/foods/`)
+      .get(`${API}/foods`)
       .then(() => {
         navigate('/foods')
       })
