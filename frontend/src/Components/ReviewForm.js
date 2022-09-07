@@ -9,7 +9,7 @@ function ReviewForm(props) {
     reviewer: '',
     title: '',
     content: '',
-    rating: 0,
+    rating: '',
     food_id: foodId,
   })
 
@@ -22,7 +22,6 @@ function ReviewForm(props) {
       setReview(reviewDetails)
     }
   }, [foodId, reviewDetails, props])
-
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -42,7 +41,7 @@ function ReviewForm(props) {
       {props.children}
       <form
         onSubmit={handleSubmit}
-        className='bg-[#FDEEDC] p-10 rounded-lg shadow md:w-3/4 mx-auto lg:w-1/2 '
+        className='bg-[#FDEEDC] p-10 rounded-lg shadow md:w-3/4 mx-auto lg:w-[80%] '
       >
         <br />
         <div className='mb-5'>

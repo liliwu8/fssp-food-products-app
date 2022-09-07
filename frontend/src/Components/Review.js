@@ -8,7 +8,7 @@ function Review({ review, handleDelete, handleSubmit }) {
   }
 
   return (
-    <div className='Review p-10 rounded-3xl shadow md:w-3/4 mx-auto my-[30px] lg:w-1/2 bg-[#FFFDE8]		'>
+    <div className='Review p-6 rounded-lg shadow md:w-3/4 mx-auto my-[20px] lg:w-[80%] bg-[#FFFDE8]'>
       {viewEditForm ? (
         <ReviewForm
           reviewDetails={review}

@@ -60,7 +60,7 @@ function Reviews() {
       <h2 className='flex-4 text-3xl text-[#4D3B2A] font-bold uppercase mb-[2%] mt-[2%]'>
         Reviews
       </h2>
-      <ReviewForm handleSubmit={handleAdd}></ReviewForm>
+      <ReviewForm handleSubmit={handleAdd}/>
       {reviews.map((review) => (
         <Review
           key={review.id}
