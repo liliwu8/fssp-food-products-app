@@ -33,7 +33,7 @@ function NewFoodForm({ locate }) {
         console.warn(err)
       })
   }
- 
+
   return (
     <div className='New'>
       <form onSubmit={handleSubmit}>

@@ -1,4 +1,9 @@
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+const API = process.env.REACT_APP_API_URL
+
 function Cart({ carts, setCart }) {
+  let navigate = useNavigate()
   let dollarUS = Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
@@ -15,6 +20,31 @@ function Cart({ carts, setCart }) {
   const removeCart = (removefood) => {
     //if cart !== to the current food
     setCart(carts.filter((cart) => cart !== removefood))
+  }
+
+  const clearCart = () => {
+    setCart([])
+    axios
+      .get(`${API}/foods/`)
+      .then(() => {
+        navigate('/foods')
+      })
+      .catch((err) => {
+        console.warn(err)
+      })
+  }
+
+  const checkOut = () => {
+    setCart([])
+    axios
+      .get(`${API}/foods/`)
+      .then(() => {
+        navigate('/foods')
+      })
+      .catch((err) => {
+        console.warn(err)
+      })
+    alert('Thank You for shoping with us!')
   }
 
   const cartItems = carts.map((food) => {
@@ -68,6 +98,18 @@ function Cart({ carts, setCart }) {
             Total: {dollarUS.format(cartTotal(carts))}
           </h1>
           {cartItems}
+          <button
+            onClick={() => checkOut()}
+            className='h-10 px-5 m-2 bg-[#13348E] text-white hover:bg-[#1A48C6] font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'
+          >
+            checkout
+          </button>
+          <button
+            onClick={() => clearCart(carts)}
+            className='h-10 px-5 m-2 bg-[#C83E2D] text-white hover:bg-[#D65B4C] font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'
+          >
+            clearCart
+          </button>
         </>
       )}
     </>
