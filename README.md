@@ -16,8 +16,48 @@ If you'd like to run my project locally, please read the followig steps:
 
 ### Frontend Setup
 
-_Section in progress_
+```
+#clone this repository to your machine
+git clone https://github.com/liliwu8/fssp-food-products-app.git
+
+#navigate to the frontend directory
+cd fssp-food-products-app/frontend
+
+#create a .env file 
+REACT_APP_API_URL=http://localhost:3333
+
+#npm install in frontend 
+npm install
+
+#start frontend server
+npm start
+```
 
 ### Backend Setup
 
-_Section in progress_
+```
+# navigate to backend directory 
+cd fssp-food-products-app/backend
+
+# create .env file 
+touch .env
+
+# inside .env file copy and save
+PORT = 3333
+PG_HOST = localhost
+PG_PORT = 5432
+PG_DATABASE = foods
+PG_USER = postgres
+
+#npm install in backend folder
+npm install
+
+# initialize and seed the database
+npm run db:init
+npm run db:seed
+
+#start backend server
+npm start or nodemon server.js
+```
+##Acknowledgments
+Icon design, [Jossy Pascasio](https://github.com/named-josie).

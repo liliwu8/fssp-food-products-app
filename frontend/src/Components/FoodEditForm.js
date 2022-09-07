@@ -39,7 +39,7 @@ function FoodEditForm() {
       .put(`${API}/foods/${foodId}`, food)
       .then((res) => {
         setFood(res.data)
-        navigate('/foods')
+        navigate(`/foods/${foodId}`)
       })
       .catch((err) => {
         console.warn(err)
