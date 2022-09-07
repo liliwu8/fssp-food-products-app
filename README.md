@@ -14,7 +14,7 @@ Ecommerce like shop where you can get your dishes around the world.
 
 If you'd like to run my project locally, please read the followig steps:
 
-### Frontend Setup
+## Frontend Setup
 
 ```
 #clone this repository to your machine
@@ -33,7 +33,7 @@ npm install
 npm start
 ```
 
-### Backend Setup
+## Backend Setup
 
 ```
 # navigate to backend directory 
@@ -60,5 +60,6 @@ npm run db:seed
 npm start or nodemon server.js
 ```
 
-##Acknowledgments
+## Acknowledgement
+
 Icon design, [Jossy Pascasio](https://github.com/named-josie).
