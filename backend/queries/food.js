@@ -1,5 +1,5 @@
 const db = require('../db/dbConfig.js')
-const { isValidUrl } = require('../Vaildation/foodValidation')
+const { isValidUrl, getFormattedName } = require('../Vaildation/foodValidation')
 
 //Index
 const getAllFoods = async () => {
@@ -28,8 +28,8 @@ const createFood = async (food) => {
     const newfood = await db.one(
       'insert into food (originalname, name, price, location, ingredients, image) values ($1, $2, $3, $4, $5, $6) returning *',
       [
-        originalname,
-        name,
+        getFormattedName(originalname),
+        getFormattedName(name),
         price,
         location,
         ingredients,
@@ -50,8 +50,8 @@ const updateFood = async (id, food) => {
     const updatesFood = await db.one(
       'update food set originalname=$1, name=$2, price=$3, location=$4, ingredients=$5, image=$6 where id = $7 returning * ',
       [
-        originalname,
-        name,
+        getFormattedName(originalname),
+        getFormattedName(name),
         price,
         location,
         ingredients,
