@@ -9,7 +9,7 @@ function ReviewForm(props) {
     reviewer: '',
     title: '',
     content: '',
-    rating: '',
+    rating: 0,
     food_id: foodId,
   })
 
