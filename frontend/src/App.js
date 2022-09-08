@@ -11,15 +11,17 @@ import NavBar from './Components/NavBar'
 import Cart from './Components/Cart'
 import { useEffect, useState } from 'react'
 
-const cartStore = JSON.parse(localStorage.getItem('cart') || '[]')
+const cartInLocalStorage = JSON.parse(localStorage.getItem('cart') || '[]')
 function App() {
   const [cart, setCart] = useState(cartStore)
 
+  //rerun
   useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart))
+    localStorage.setItem('cart', JSON.stringify(cartInLocalStorage))
   }, [cart])
 
   const addCart = (item) => {
+    //finding the product then increase quanitiy 
     let newCart = [...cart]
     let itemInCart = newCart.find((food) => food.name === item.name)
 
