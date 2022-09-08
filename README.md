@@ -59,7 +59,3 @@ npm run db:seed
 #start backend server
 npm start or nodemon server.js
 ```
-
-## Acknowledgement
-
-Icon design, [Jossy Pascasio](https://github.com/named-josie).
