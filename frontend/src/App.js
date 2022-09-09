@@ -19,7 +19,7 @@ function App() {
 
   //run
   useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cartInLocalStorage))
+    localStorage.setItem('cart', JSON.stringify(cart))
   }, [cart])
 
   const addCart = (item) => {
