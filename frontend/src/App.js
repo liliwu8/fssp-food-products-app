@@ -46,9 +46,9 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/foods' element={<Index />} />
-          <Route path='/foods/new' element={<New />} />
+          {/* <Route path='/foods/new' element={<New />} /> */}
           <Route path='/foods/:foodId' element={<Show addCart={addCart} />} />
-          <Route path='/foods/:foodId/edit' element={<Edit />} />
+          {/* <Route path='/foods/:foodId/edit' element={<Edit />} /> */}
           <Route path='*' element={<FourOFour />} />
           {/* <Route path='/map' element={<Map/>}/> */}
           <Route

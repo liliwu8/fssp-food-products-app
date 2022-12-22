@@ -49,11 +49,6 @@ function NavBar({ cart }) {
               </h1>
             </li>
             <li>
-              <h1 className='px-3 py-2 flex items-center text-4xl	uppercase font-bold leading-snug text-[#EBB755] hover:text-white'>
-                <Link to='/foods/new'>New Dish</Link>
-              </h1>
-            </li>
-            <li>
               <h1 className='px-3 py-2 flex items-center text-3xl uppercase font-bold leading-snug text-[#EBB755] hover:text-white'>
                 <Link to='/cart'>
                   <FontAwesomeIcon icon={faShoppingCart} />

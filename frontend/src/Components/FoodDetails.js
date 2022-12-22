@@ -40,7 +40,7 @@ function FoodDetails({ addCart }) {
       <section className='h-full'>
         <article className=' overflow-hidden'>
           <div className='container px-5 mx-auto'>
-            <div className=' lg:w-4/5 mx-auto flex flex-wrap'>
+            <div className='lg:w-4/5 mx-auto flex flex-wrap'>
               <img
                 src={food.image}
                 alt='dishpic'
@@ -67,17 +67,6 @@ function FoodDetails({ addCart }) {
                     Back
                   </button>
                 </Link>
-                <Link to={`/foods/${foodId}/edit`}>
-                  <button className='h-10 px-5 m-2 bg-[#202053] text-white hover:bg-[#4040A6] font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'>
-                    Edit
-                  </button>
-                </Link>
-                <button
-                  className='h-10 px-5 m-2 bg-[#C83E2D] text-white hover:bg-[#D65B4C] font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'
-                  onClick={handleDelete}
-                >
-                  Delete
-                </button>
                 <button
                   onClick={() => addCart(food)}
                   className='h-10 px-5 m-2 bg-[#13348E] text-white hover:bg-[#1A48C6] font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'
