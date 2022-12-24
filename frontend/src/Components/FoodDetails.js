@@ -2,9 +2,13 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams, Link } from 'react-router-dom'
 import Reviews from './Reviews'
+import { useContext } from 'react'
+import { CurrentUserContext } from './CurrentUserContext'
 const API = process.env.REACT_APP_API_URL
 
 function FoodDetails({ addCart }) {
+  const currentUser = useContext(CurrentUserContext)
+  console.log(currentUser.currentUser)
   const [food, setFood] = useState([])
   const { foodId } = useParams()
   let navigate = useNavigate()
@@ -23,17 +27,6 @@ function FoodDetails({ addCart }) {
         navigate('/not-found')
       })
   }, [foodId, navigate])
-
-  const handleDelete = () => {
-    axios
-      .delete(`${API}/foods/${foodId}`)
-      .then(() => {
-        navigate('/foods')
-      })
-      .catch((err) => {
-        console.warn(err)
-      })
-  }
 
   return (
     <div className='mt-16 mx-auto px-2 lg:px-50 flex-grow h-full w-full'>
@@ -67,12 +60,19 @@ function FoodDetails({ addCart }) {
                     Back
                   </button>
                 </Link>
-                <button
-                  onClick={() => addCart(food)}
-                  className='h-10 px-5 m-2 bg-[#13348E] text-white hover:bg-[#1A48C6] font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'
-                >
-                  add cart
-                </button>
+
+                {currentUser.currentUser.length ? (
+                  <button
+                    onClick={() => addCart(food)}
+                    className='h-10 px-5 m-2 bg-[#13348E] text-white hover:bg-[#1A48C6] font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'
+                  >
+                    add cart
+                  </button>
+                ) : (
+                  <>
+                    <a href='/signup'>Sign Up</a> or <a href='/login'>login</a>
+                  </>
+                )}
               </div>
             </div>
             <Reviews />

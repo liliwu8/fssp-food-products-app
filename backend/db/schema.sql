@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS foods;
+
 CREATE DATABASE foods; 
 
 \c foods; 

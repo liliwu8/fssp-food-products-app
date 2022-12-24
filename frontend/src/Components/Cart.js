@@ -1,6 +1,4 @@
-import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-const API = process.env.REACT_APP_API_URL
 
 function Cart({ carts, setCart }) {
   let navigate = useNavigate()
@@ -24,26 +22,14 @@ function Cart({ carts, setCart }) {
 
   const clearCart = () => {
     setCart([])
-    axios
-      .get(`${API}/foods`)
-      .then(() => {
-        navigate('/foods')
-      })
-      .catch((err) => {
-        console.warn(err)
-      })
+   navigate('/foods')
   }
 
   const checkOut = () => {
     setCart([])
-    axios
-      .get(`${API}/foods/`)
-      .then(() => {
-        navigate('/foods')
-      })
-      .catch((err) => {
-        console.warn(err)
-      })
+
+    navigate('/foods')
+
     alert('Thank You for shoping with us!')
   }
 

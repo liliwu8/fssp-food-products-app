@@ -2,9 +2,14 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { useContext } from 'react'
+import { CurrentUserContext } from './CurrentUserContext'
+import SignOut from '../FireBase/SignOut'
 import WorldCusine from './World_Cuisine.png'
 
 function NavBar({ cart }) {
+  const { currentUser } = useContext(CurrentUserContext)
+
   const [navOpen, setNavOpen] = useState(false)
 
   const cartTotal = (carts) => {
@@ -44,10 +49,27 @@ function NavBar({ cart }) {
         >
           <ul className='flex flex-col lg:flex-row list-none lg:ml-auto'>
             <li>
-              <h1 className='px-3 py-2 flex items-center text-4xl uppercase font-bold leading-snug text-[#EBB755] hover:text-white'>
+              <h1 className='px-3 py-2 flex items-center text-4xl  font-bold leading-snug text-[#EBB755] hover:text-white'>
                 <Link to='/foods'>Dish</Link>
               </h1>
             </li>
+            {!currentUser.length ? (
+              <>
+                <li>
+                  <h1 className='px-3 py-2 flex items-center text-4xl	 font-bold leading-snug text-[#EBB755] hover:text-white'>
+                    <Link to='/login'>Login</Link>
+                  </h1>
+                </li>
+                <li>
+                  <h1 className='px-3 py-2 flex items-center text-4xl	 font-bold leading-snug text-[#EBB755] hover:text-white'>
+                    <Link to='/signup'>Sign Up</Link>
+                  </h1>
+                </li>
+              </>
+            ) : (
+              <SignOut />
+            )}
+
             <li>
               <h1 className='px-3 py-2 flex items-center text-3xl uppercase font-bold leading-snug text-[#EBB755] hover:text-white'>
                 <Link to='/cart'>
