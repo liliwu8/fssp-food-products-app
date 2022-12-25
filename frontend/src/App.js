@@ -11,6 +11,7 @@ import NavBar from './Components/NavBar'
 import Cart from './Components/Cart'
 import SignUp from './FireBase/SignUp'
 import SignOut from './FireBase/SignOut'
+import Footer from './Pages/Footer'
 import { useEffect, useState } from 'react'
 import { CurrentUserContext } from './Components/CurrentUserContext'
 
@@ -64,6 +65,7 @@ function App() {
             <Route path='/signout' element={<SignOut />} />
             <Route path='*' element={<FourOFour />} />
           </Routes>
+          <Footer/>
         </main>
       </CurrentUserContext.Provider>
     </div>

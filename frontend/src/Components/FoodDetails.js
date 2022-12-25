@@ -69,8 +69,8 @@ function FoodDetails({ addCart }) {
                     add cart
                   </button>
                 ) : (
-                  <>
-                    <a href='/signup'>Sign Up</a> or <a href='/login'>login</a>
+                  <>{' '}
+                    Please <a href='/signup'>Sign Up</a> or <a href='/login'>Login</a> to buy
                   </>
                 )}
               </div>
