@@ -24,7 +24,7 @@ function SignOut() {
   return (
     <li>
       <h1 className='px-3 py-2 flex items-center text-4xl	 font-bold leading-snug text-[#EBB755] hover:text-white'>
-        <Link to='/signup' onClick={userSignOut}>
+        <Link to='/' onClick={userSignOut}>
           LogOut
         </Link>
       </h1>
