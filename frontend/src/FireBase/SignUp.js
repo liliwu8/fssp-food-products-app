@@ -1,16 +1,18 @@
-import { Link, useNavigate } from 'react-router-dom'
-import { useState } from 'react'
-import auth from './firebaseAuth'
-import { createUserWithEmailAndPassword } from 'firebase/auth'
+import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import auth from './firebaseAuth';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function SignUp() {
   const [userInput, setUserInput] = useState({
     user_email: '',
     user_password: '',
-  })
+  });
 
-  const navigate = useNavigate()
-  
+  const navigate = useNavigate();
+
   const signUp = () => {
     createUserWithEmailAndPassword(
       auth,
@@ -18,27 +20,40 @@ function SignUp() {
       userInput.user_password
     )
       .then((cred) => {
-        console.log(cred.user_displayName)
-        alert('you have signed up', cred)
-        navigate('/dish')
+        console.log(cred.user_displayName);
+        notify();
       })
       .catch((error) => {
-        console.log(error.message)
-        alert(error.message)
-      })
-  }
+        console.log(error.message);
+        alert(error.message);
+      });
+  };
 
+  const notify = () => {
+    toast.success('You have successfully sign up!', {
+      position: 'top-center',
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: false,
+      pauseOnFocusLoss: false,
+      draggable: true,
+      progress: undefined,
+    });
+    setTimeout(() => {
+      navigate('/login');
+    }, 3100);
+  };
   const handleSubmit = (event) => {
-    event.preventDefault()
-    signUp()
+    event.preventDefault();
+    signUp();
     setUserInput({
       user_email: '',
       user_password: '',
-    })
-  }
+    });
+  };
   const handleTextChange = (event) => {
-    setUserInput({ ...userInput, [event.target.id]: event.target.value })
-  }
+    setUserInput({ ...userInput, [event.target.id]: event.target.value });
+  };
 
   return (
     <div className='bg-white font-family-karla h-screen'>
@@ -94,8 +109,9 @@ function SignUp() {
           />
         </div>
       </div>
+      <ToastContainer autoClose={2000} theme='light' />
     </div>
-  )
+  );
 }
 
-export default SignUp
+export default SignUp;

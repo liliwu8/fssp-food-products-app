@@ -1,9 +1,7 @@
 import './App.css'
-// import Edit from './Pages/Edit'
 import FourOFour from './Pages/FourOFour'
 import Home from './Pages/Home'
 import Index from './Pages/Index'
-// import New from './Pages/New'
 import Show from './Pages/Show'
 import Login from './FireBase/Login'
 import { Routes, Route } from 'react-router-dom'
@@ -14,6 +12,7 @@ import SignOut from './FireBase/SignOut'
 import Footer from './Pages/Footer'
 import { useEffect, useState } from 'react'
 import { CurrentUserContext } from './Components/CurrentUserContext'
+import About from './Pages/About'
 
 //pass key, default
 const cartInLocalStorage = JSON.parse(localStorage.getItem('cart') || '[]')
@@ -63,6 +62,7 @@ function App() {
               element={<Cart carts={cart} setCart={setCart} />}
             />
             <Route path='/signout' element={<SignOut />} />
+            <Route path='about' element={<About/> } />
             <Route path='*' element={<FourOFour />} />
           </Routes>
           <Footer/>

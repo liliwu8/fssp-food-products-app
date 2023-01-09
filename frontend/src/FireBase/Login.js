@@ -3,6 +3,9 @@ import { CurrentUserContext } from '../Components/CurrentUserContext'
 import { useState, useContext } from 'react'
 import auth from './firebaseAuth'
 import { signInWithEmailAndPassword } from 'firebase/auth'
+import { toast, ToastContainer } from 'react-toastify'
+import "react-toastify/dist/ReactToastify.css";
+
 
 function Login() {
   const currentUser = useContext(CurrentUserContext)
@@ -14,6 +17,8 @@ function Login() {
 
   const navigate = useNavigate()
 
+
+
   const logIn = () => {
     signInWithEmailAndPassword(
       auth,
@@ -22,15 +27,29 @@ function Login() {
     )
       .then((cred) => {
         currentUser.setCurrentUser(cred.user.email)
-        alert('you have logged in', cred)
-        navigate('/foods')
+        // alert('you have logged in', cred)
+        // navigate('/foods')
+        notify()
       })
       .catch((error) => {
         console.log(error.message)
         alert(error.message)
       })
   }
-
+  const notify = () => {
+    toast.success('You have successfully logged in!', {
+      position: 'top-center',
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: false,
+      pauseOnFocusLoss: false,
+      draggable: true,
+      progress: undefined,
+    })
+    setTimeout(() => {
+      navigate('/foods')
+    }, 3100)
+  }
   const handleSubmit = (event) => {
     event.preventDefault()
     logIn()
@@ -91,7 +110,7 @@ function Login() {
             </div>
           </div>
         </div>
-
+      
         <div className='w-1/2 shadow-2xl'>
           <img
             className='object-cover w-full h-screen hidden md:block'
@@ -100,6 +119,7 @@ function Login() {
           />
         </div>
       </div>
+      <ToastContainer autoClose={2000} theme='light' />
     </div>
   )
 }

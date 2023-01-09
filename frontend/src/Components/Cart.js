@@ -1,4 +1,6 @@
 import { useNavigate } from 'react-router-dom'
+import { toast, ToastContainer } from 'react-toastify'
+import "react-toastify/dist/ReactToastify.css";
 
 function Cart({ carts, setCart }) {
   let navigate = useNavigate()
@@ -27,10 +29,22 @@ function Cart({ carts, setCart }) {
 
   const checkOut = () => {
     setCart([])
+    notify()
+  }
 
-    navigate('/foods')
-
-    alert('Thank You for shoping with us!')
+  const notify = () => {
+    toast.success('You have successfully logged in!', {
+      position: 'top-center',
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: false,
+      pauseOnFocusLoss: false,
+      draggable: true,
+      progress: undefined,
+    })
+    setTimeout(() => {
+      navigate('/foods')
+    }, 2000)
   }
 
   const cartItems = carts.map((food) => {
@@ -68,6 +82,7 @@ function Cart({ carts, setCart }) {
             </div>
           </article>
         </section>
+        
       </div>
     )
   })
@@ -98,6 +113,7 @@ function Cart({ carts, setCart }) {
           </button>
         </>
       )}
+      <ToastContainer autoClose={2000} theme='light' />
     </>
   )
 }
