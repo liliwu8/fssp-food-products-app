@@ -11,7 +11,7 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 app.use('/foods', foodController)
-app.use('/reviews', reviewsController)
+app.use('ss', reviewsController)
 
 //Routes
 app.get('/', (req, res) => {
