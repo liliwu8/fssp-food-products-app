@@ -1,7 +1,7 @@
 # world cuisine
 Ecommerce where you can order your dishes around the world and ship to your door. 
 
-# Sign in and Login 
+<!-- # Sign in and Login 
 [https://user-images.githubusercontent.com/96275694/212498600-57bfbc81-3a70-4ce9-80e2-b9ab2c8dcf44.mp4](https://user-images.githubusercontent.com/96275694/212498600-57bfbc81-3a70-4ce9-80e2-b9ab2c8dcf44.mp4)
 
 # Add To Your Cart
@@ -11,14 +11,14 @@ Ecommerce where you can order your dishes around the world and ship to your door
 
 # Adding,Editing,and Delete Your Reviews
 [https://user-images.githubusercontent.com/96275694/212498687-ee9473e5-a71b-448c-a42a-2b601e14048f.mp4
-](https://user-images.githubusercontent.com/96275694/212498719-560c95e5-56e7-449f-98c2-4e0cd60528e0.mp4)
+](https://user-images.githubusercontent.com/96275694/212498719-560c95e5-56e7-449f-98c2-4e0cd60528e0.mp4) -->
 
 
 
 
 ## Important Links
 
-- [Deployed API Server](https://fast-beach-94136.herokuapp.com/)
+- [Deployed API Server](https://world-cuisine.adaptable.app/)
 - [Deployed Frontend](https://world-cuisines.netlify.app/)
 - [Trello Board](https://trello.com/b/foR4yAWN/food-around-the-world)
 - [ERD](https://miro.com/welcomeonboard/SVd6WEJqb096VGs2Tk82ZllhRGN5RWp6MmxyQlJYTEZPb0J4ZWtCQk9hVXZac1VWajlVelpsMzFIaUxTTXBTeXwzNDU4NzY0NTE2MDA0NTYyMTU0?share_link_id=777480915680)
