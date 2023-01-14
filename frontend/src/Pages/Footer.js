@@ -15,17 +15,17 @@ function Footer() {
           </a>
         </li>
         <li>
-          <a href='' class='mr-4 hover:underline md:mr-6'>
+          <a href='#' class='mr-4 hover:underline md:mr-6'>
             Privacy Policy
           </a>
         </li>
         <li>
-          <a href='' class='mr-4 hover:underline md:mr-6'>
+          <a href='#' class='mr-4 hover:underline md:mr-6'>
             Licensing
           </a>
         </li>
         <li>
-          <a href='' class='hover:underline'>
+          <a href='#' class='hover:underline'>
             Contact
           </a>
         </li>
