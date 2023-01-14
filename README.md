@@ -1,5 +1,19 @@
 # world cuisine
-Ecommerce like shop where you can get your dishes around the world.
+Ecommerce where you can order your dishes around the world and ship to your door. 
+
+# Sign in and Login 
+[https://user-images.githubusercontent.com/96275694/212498600-57bfbc81-3a70-4ce9-80e2-b9ab2c8dcf44.mp4](https://user-images.githubusercontent.com/96275694/212498600-57bfbc81-3a70-4ce9-80e2-b9ab2c8dcf44.mp4)
+
+# Add To Your Cart
+[https://user-images.githubusercontent.com/96275694/212498687-ee9473e5-a71b-448c-a42a-2b601e14048f.mp4
+](https://user-images.githubusercontent.com/96275694/212498687-ee9473e5-a71b-448c-a42a-2b601e14048f.mp4)
+
+
+# Adding,Editing,and Delete Your Reviews
+[https://user-images.githubusercontent.com/96275694/212498687-ee9473e5-a71b-448c-a42a-2b601e14048f.mp4
+](https://user-images.githubusercontent.com/96275694/212498719-560c95e5-56e7-449f-98c2-4e0cd60528e0.mp4)
+
+
 
 
 ## Important Links
@@ -24,7 +38,19 @@ git clone https://github.com/liliwu8/fssp-food-products-app.git
 cd fssp-food-products-app/frontend
 
 #create a .env file 
+touch .env
+
+#inside the .env file enter these data and save (you need to register a firebase account)
+# https://firebase.google.com/
+REACT_APP_FIREBASE_API_KEY=
+REACT_APP_FIREBASE_AUTH_DOMAIN=
+REACT_APP_FIREBASE_PROJECT_ID=
+REACT_APP_FIREBASE_DATABASE_URL=
+REACT_APP_FIREBASE_STORAGE_BUCKET=
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=
+REACT_APP_FIREBASE_APP_ID=
 REACT_APP_API_URL=http://localhost:3333
+
 
 #npm install in frontend 
 npm install
