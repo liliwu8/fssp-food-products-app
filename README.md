@@ -19,7 +19,7 @@ Ecommerce where you can order your dishes around the world and ship to your door
 ## Important Links
 
 - [Deployed API Server](https://world-cuisine.adaptable.app/)
-- [Deployed Frontend](https://world-cuisines.netlify.app/)
+- [Deployed Frontend](https://world-cuisines.netlify.app)
 - [Trello Board](https://trello.com/b/foR4yAWN/food-around-the-world)
 - [ERD](https://miro.com/welcomeonboard/SVd6WEJqb096VGs2Tk82ZllhRGN5RWp6MmxyQlJYTEZPb0J4ZWtCQk9hVXZac1VWajlVelpsMzFIaUxTTXBTeXwzNDU4NzY0NTE2MDA0NTYyMTU0?share_link_id=777480915680)
 - [Wireframes](https://wireframe.cc/omtocH)
